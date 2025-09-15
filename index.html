@@ -64,7 +64,7 @@
             <div class="col-lg-6 text-end">
                 <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
                     <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
-                    <span class="fs-5 fw-bold">+012 345 6789</span>
+                    <span class="fs-5 fw-bold">+63 977 785 0147</span>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
     <div class="container-fluid px-0 mb-5">
         <div class="hero-header position-relative">
             <!-- Background Image -->
-            <img class="w-100" src="img/try.jpg" alt="Hero Image" style="object-fit: cover; height: 100vh;">
+            <img class="w-100" src="img/pmfcswatfit.jpg" alt="Hero Image" style="object-fit: cover; height: 100vh;">
 
             <!-- Gradient Overlay -->
             <div class="overlay position-absolute top-0 start-0 w-100 h-100"
@@ -136,61 +136,46 @@
     </div>
     <!-- Hero End -->
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Images -->
-                <div class="col-lg-6">
-                    <div class="row gx-3 h-100">
-                        <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
-                            <img class="img-fluid rounded shadow" src="img/about-1.jpg" alt="Training 1">
-                        </div>
-                        <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.3s">
-                            <img class="img-fluid rounded shadow" src="img/about-2.jpg" alt="Training 2">
-                        </div>
-                    </div>
-                </div>
+    <!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 
-                <!-- Text Content -->
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">About Us</p>
-                    <h1 class="display-5 mb-4">1st Company, PMFC Batangas</h1>
-                    <p class="mb-4">
-                        The 1st Company of the Provincial Mobile Force Company (PMFC) Batangas is committed to
-                        safeguarding our communities through discipline, vigilance, and service. Beyond our daily
-                        operations, we continuously strengthen our force with specialized training in self-defense,
-                        tactical response, and proper methods of subduing criminals — ensuring both officer safety
-                        and public protection.
-                    </p>
+<section class="py-5" style="background: linear-gradient(135deg, #f5faff, #e6f5ec);">
+    <div class="container">
+        <div class="row align-items-center g-5">
 
-                    <!-- Training Highlights -->
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="flex-shrink-0 bg-primary p-4 text-center">
-                            <i class="fa fa-shield-alt text-white fa-3x mb-2"></i>
-                            <h5 class="text-white">Focused Training</h5>
-                        </div>
-                        <div class="ms-4">
-                            <p><i class="fa fa-check text-primary me-2"></i>Self-Defense & Tactical Drills</p>
-                            <p><i class="fa fa-check text-primary me-2"></i>Proper Arrest & Restraint Techniques</p>
-                            <p><i class="fa fa-check text-primary me-2"></i>Scenario-Based Training</p>
-                            <p><i class="fa fa-check text-primary me-2"></i>Community Safety Initiatives</p>
-                            <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>Commitment to Discipline &
-                                Service</p>
-                        </div>
-                    </div>
-
-                    <!-- Call-to-Action Button -->
-                    <a href="about.html" class="btn btn-primary btn-lg px-5 py-3 rounded-pill wow fadeInUp"
-                        data-wow-delay="0.7s">
-                        Learn More About Us
-                    </a>
-                </div>
-                <!-- End Text Content -->
+            <!-- Left Column (Text) -->
+            <div class="col-lg-6">
+                <h2 class="fw-bold text-primary mb-3">Stay Connected</h2>
+                <p class="text-muted fs-5 mb-4">
+                    Follow us on Facebook to get the latest updates, announcements, and activities of the
+                    1st Company, PMFC Batangas.
+                </p>
+                <a href="https://www.facebook.com/PMFCBatangas" target="_blank"
+                    class="btn btn-primary btn-lg shadow-sm rounded-pill px-4">
+                    Visit Our Page <i class="fa fa-arrow-right ms-2"></i>
+                </a>
             </div>
+
+            <!-- Right Column (Facebook Plugin) -->
+            <div class="col-lg-4">
+                <div class="p-3 bg-white rounded shadow-lg" style="border: 3px solid #d7ffd5; border-radius: 15px;">
+                    <div class="fb-page" 
+                         data-href="https://www.facebook.com/PMFCBatangas" 
+                         data-tabs="timeline"
+                         data-width="500" 
+                         data-height="500" 
+                         data-small-header="false" 
+                         data-hide-cover="false"
+                         data-show-facepile="true">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- About End -->
+</section>
 
     <!-- Facts Start -->
     <div class="container-fluid facts my-5 p-5">
