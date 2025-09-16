@@ -725,3 +725,62 @@ h6,
 html {
   scroll-behavior: auto !important;
 }
+
+/* Card and Image Styling */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.training-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+}
+
+.training-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.training-img:hover {
+  transform: scale(1.1);
+}
+
+/* Badge and Button Styling */
+.badge.bg-danger {
+  background-color: #dc3545 !important; /* A strong, clean red */
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Modal Styling */
+.modal-header.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.training-gallery {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.training-gallery:hover {
+  transform: scale(1.05);
+}
+
+
