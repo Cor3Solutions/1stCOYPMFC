@@ -259,109 +259,44 @@ h6,
 }
 
 /*** Features ***/
+/* Base styles for the button on all screen sizes */
 .btn-play {
   position: absolute;
   top: 50%;
-  right: -30px;
-  transform: translateY(-50%);
-  display: block;
-  box-sizing: content-box;
-  width: 16px;
-  height: 26px;
-  border-radius: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
   border: none;
-  outline: none !important;
-  padding: 18px 20px 20px 28px;
-  background: var(--primary);
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 100;
 }
 
-@media (max-width: 992px) {
-  .btn-play {
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -50%);
-  }
+/* Style the Font Awesome shield icon */
+.btn-play .fa-shield-alt {
+  font-size: 80px; /* Adjust the size of the shield icon */
+  color: #8b0707; /* Use your brand color or a color that stands out */
+  transition: transform 0.3s ease-in-out;
 }
 
-.btn-play:before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: var(--primary);
-  border-radius: 100%;
-  animation: pulse-border 1500ms ease-out infinite;
+/* Add a hover effect for a more dynamic feel */
+.btn-play:hover .fa-shield-alt {
+  transform: scale(1.1); /* Make the icon slightly larger on hover */
 }
-
-.btn-play:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: var(--primary);
-  border-radius: 100%;
-  transition: all 200ms;
-}
-
+/* Hide the span to remove the default play triangle */
 .btn-play span {
-  display: block;
-  position: relative;
-  z-index: 3;
-  width: 0;
-  height: 0;
-  left: -1px;
-  border-left: 16px solid #ffffff;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
+  display: none;
 }
 
-@keyframes pulse-border {
-  0% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: 1;
-  }
+/* ---------------------------------------------------- */
 
-  100% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
-    opacity: 0;
+/* Hide the button and icon on mobile devices (screens smaller than 768px) */
+@media (max-width: 767.98px) {
+  .btn-play {
+    display: none;
   }
 }
-
-.modal-video .modal-dialog {
-  position: relative;
-  max-width: 800px;
-  margin: 60px auto 0 auto;
-}
-
-.modal-video .modal-body {
-  position: relative;
-  padding: 0px;
-}
-
-.modal-video .close {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  right: 0px;
-  top: -30px;
-  z-index: 999;
-  font-size: 30px;
-  font-weight: normal;
-  color: #ffffff;
-  background: #000000;
-  opacity: 1;
-}
-
 /*** Service ***/
 .service-item {
   position: relative;
@@ -782,5 +717,3 @@ html {
 .training-gallery:hover {
   transform: scale(1.05);
 }
-
-

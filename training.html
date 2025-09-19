@@ -41,74 +41,7 @@
   </div>
   <!-- Spinner End -->
 
-  <!-- Topbar Start -->
-  <div class="container-fluid bg-dark px-0">
-    <div class="row g-0 d-none d-lg-flex">
-      <div class="col-lg-6 ps-5 text-start">
-        <div class="h-100 d-none d-lg-inline-flex align-items-center text-white">
-          <span>Follow Us:</span>
-          <a class="btn btn-link text-light" href="https://www.facebook.com/PMFCBatangas" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a class="btn btn-link text-light" href="https://x.com/BatangasPPSC" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a class="btn btn-link text-light" href="https://www.instagram.com/1stbatangas/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a class="btn btn-link text-light" href="https://www.facebook.com/hrdd.section.5" target="_blank">
-            <i class="fab fa-facebook-f"></i> <span class="d-none d-md-inline"> HRDD Section</span>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6 text-end">
-        <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
-          <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
-          <a href="tel:+639777850147" class="text-white text-decoration-none">
-            <span class="fs-5 fw-bold">+63 977 785 0147</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Topbar End -->
-
-
-  <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
-    <a href="index.html" class="navbar-brand ps-5 me-0">
-      <img src="logo.jpg" alt="1st Coy PMFC Batangas Logo" class="img-fluid" style="height: 60px;">
-    </a>
-    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="training.html" class="nav-item nav-link active">Trainings</a>
-        <a href="members.html" class="nav-item nav-link">Members</a>
-        <a href="contact.html" class="nav-item nav-link">Contact</a>
-
-      </div>
-      <!-- Social Media for Mobile -->
-      <div class="d-lg-none mt-3 text-center">
-        <a class="btn btn-link text-dark" href="https://www.facebook.com/PMFCBatangas" target="_blank">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="btn btn-link text-dark" href="https://x.com/BatangasPPSC" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a class="btn btn-link text-dark" href="https://www.instagram.com/1stbatangas/" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a class="btn btn-link text-dark" href="https://www.facebook.com/hrdd.section.5" target="_blank">
-          <i class="fab fa-facebook-f"></i> HRDD
-        </a>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar End -->
+  <div id="header"></div>
 
   <!-- Page Header Start -->
   <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s"
@@ -145,7 +78,7 @@
         <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
           <div class="card border-0 shadow-lg rounded-3 overflow-hidden h-100">
             <div class="training-img-wrapper">
-              <img class="img-fluid training-img" src="img/training-1a.jpeg" alt="Training 1">
+              <img class="img-fluid training-img" src="img/training/training-1a.jpeg" alt="Training 1">
             </div>
             <div class="card-body text-center">
               <h4 class="fw-bold mb-1">Fundamentals</h4>
@@ -164,7 +97,7 @@
         <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
           <div class="card border-0 shadow-lg rounded-3 overflow-hidden h-100">
             <div class="training-img-wrapper">
-              <img class="img-fluid training-img" src="img/training-2a.jpeg" alt="Training 2">
+              <img class="img-fluid training-img" src="img/training/training-2a.jpeg" alt="Training 2">
             </div>
             <div class="card-body text-center">
               <h4 class="fw-bold mb-1">Fundamentals</h4>
@@ -196,11 +129,14 @@
             Headquarters, Brgy Masaya, Rosario, Batangas.</p>
 
           <div class="row g-3 mb-4">
-            <div class="col-md-4"><img src="img/training-1a.jpeg" class="img-fluid rounded shadow-sm training-gallery">
+            <div class="col-md-4"><img src="img/training/training-1a.jpeg"
+                class="img-fluid rounded shadow-sm training-gallery">
             </div>
-            <div class="col-md-4"><img src="img/training-1b.jpeg" class="img-fluid rounded shadow-sm training-gallery">
+            <div class="col-md-4"><img src="img/training/training-1b.jpeg"
+                class="img-fluid rounded shadow-sm training-gallery">
             </div>
-            <div class="col-md-4"><img src="img/training-1c.jpeg" class="img-fluid rounded shadow-sm training-gallery">
+            <div class="col-md-4"><img src="img/training/training-1c.jpeg"
+                class="img-fluid rounded shadow-sm training-gallery">
             </div>
           </div>
 
@@ -229,11 +165,11 @@
           </p>
 
           <div class="row g-3 mb-4">
-            <div class="col-md-4 mb-3"><img src="img/training-2a.jpeg" class="img-fluid rounded shadow"
+            <div class="col-md-4 mb-3"><img src="img/training/training-2a.jpeg" class="img-fluid rounded shadow"
                 alt="Training Image 1"></div>
-            <div class="col-md-4 mb-3"><img src="img/training-2b.jpeg" class="img-fluid rounded shadow"
+            <div class="col-md-4 mb-3"><img src="img/training/training-2b.jpeg" class="img-fluid rounded shadow"
                 alt="Training Image 2"></div>
-            <div class="col-md-4 mb-3"><img class="img-fluid rounded shadow" src="img/training-2c.jpeg"
+            <div class="col-md-4 mb-3"><img class="img-fluid rounded shadow" src="img/training/training-2c.jpeg"
                 alt="Training Image 3"></div>
           </div>
 
@@ -263,11 +199,14 @@
 
           <!-- Image Gallery -->
           <div class="row g-3 mb-4">
-            <div class="col-md-4"><img src="img/training-1a.jpeg" class="img-fluid rounded shadow-sm training-gallery">
+            <div class="col-md-4"><img src="img/training/training-1a.jpeg"
+                class="img-fluid rounded shadow-sm training-gallery">
             </div>
-            <div class="col-md-4"><img src="img/training-1b.jpeg" class="img-fluid rounded shadow-sm training-gallery">
+            <div class="col-md-4"><img src="img/training/training-1b.jpeg"
+                class="img-fluid rounded shadow-sm training-gallery">
             </div>
-            <div class="col-md-4"><img src="img/training-1c.jpeg" class="img-fluid rounded shadow-sm training-gallery">
+            <div class="col-md-4"><img src="img/training/training-1c.jpeg"
+                class="img-fluid rounded shadow-sm training-gallery">
             </div>
           </div>
 
@@ -299,13 +238,13 @@
 
           <div class="row mb-4">
             <div class="col-md-4 mb-3">
-              <img src="img/training-2a.jpeg" class="img-fluid rounded shadow" alt="Training Image 1">
+              <img src="img/training/training-2a.jpeg" class="img-fluid rounded shadow" alt="Training Image 1">
             </div>
             <div class="col-md-4 mb-3">
-              <img src="img/training-2b.jpeg" class="img-fluid rounded shadow" alt="Training Image 2">
+              <img src="img/training/training-2b.jpeg" class="img-fluid rounded shadow" alt="Training Image 2">
             </div>
             <div class="col-md-4 mb-3">
-              <img src="img/training-2c.jpeg" class="img-fluid rounded shadow" alt="Training Image 3">
+              <img src="img/training/training-2c.jpeg" class="img-fluid rounded shadow" alt="Training Image 3">
             </div>
           </div>
 
@@ -318,25 +257,8 @@
     </div>
   </div>
 
-
-
-  <!-- Copyright Start -->
-  <div class="container-fluid copyright bg-dark py-4">
-    <div class="container text-center">
-      <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="https://cor3-solutions.vercel.app"
-          target="_blank">Cor3 Solutions</a>, All Right Reserved.
-      </p>
-      <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-      <p class="mb-0">Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">HTML Codex</a></p>
-    </div>
-  </div>
-  <!-- Copyright End -->
-
-
-  <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
+  <div id="footer"></div>
+ 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -348,6 +270,18 @@
 
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
+
+  <script>
+    // Load Header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Load Footer
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
 </body>
 
 </html>
