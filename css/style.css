@@ -717,3 +717,87 @@ html {
 .training-gallery:hover {
   transform: scale(1.05);
 }
+
+/* PCR Card Styling */
+.pcr-item .card {
+  min-height: 480px; /* taller card since images are bigger */
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.pcr-item .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Bigger images */
+.pcr-item .card-img-top {
+  height: 240px; /* increased from 180px */
+  object-fit: cover; /* makes sure images look neat */
+}
+
+/* Card body flex for button alignment */
+.pcr-item .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.25rem;
+}
+
+/* Card title */
+.pcr-item .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Card text */
+.pcr-item .card-text {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Button */
+.pcr-item .btn {
+  margin-top: auto;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* Initially hide items */
+.ladder-menu .dropdown-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: ladderFade 0.4s forwards;
+}
+
+/* When dropdown is shown, animate items with delay */
+.ladder-menu.show .dropdown-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.ladder-menu.show .dropdown-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.ladder-menu.show .dropdown-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.ladder-menu.show .dropdown-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Keyframes */
+@keyframes ladderFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

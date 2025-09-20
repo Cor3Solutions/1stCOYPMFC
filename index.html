@@ -47,19 +47,26 @@
     <!-- Hero Start -->
     <div class="container-fluid px-0 mb-5">
         <div class="hero-header position-relative">
-            <!-- Background Image -->
-            <img class="w-100" src="img/pmfcswatfit.jpg" alt="Hero Image" style="object-fit: cover; height: 100vh;">
+            <!-- Responsive Background Image -->
+            <picture>
+                <!-- Mobile -->
+                <source media="(max-width: 768px)" srcset="img/phone.png">
+                <!-- Default / Desktop -->
+                <img class="w-100" src="img/pmfccover.png" alt="Hero Image" style="object-fit: cover; height: 100vh;">
+            </picture>
 
             <!-- Gradient Overlay -->
             <div class="overlay position-absolute top-0 start-0 w-100 h-100"
-                style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.3));">
+                style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.8));">
             </div>
 
             <!-- Hero Content -->
-            <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-                <p class="fs-4 fw-medium text-uppercase text-primary mb-3 animate__animated animate__fadeInDown">
+            <div
+                class="hero-content position-absolute bottom-0 start-50 translate-middle-x text-center text-white px-3 pb-5">
+                <p class="fs-4 fw-medium text-uppercase text-warning mb-2 animate__animated animate__fadeInDown">
                     1st Coy PMFC Batangas
                 </p>
+
                 <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp text-white">
                     To Serve and Protect <br> Training. Discipline. Commitment.
                 </h1>
@@ -77,7 +84,7 @@
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 
-    <section class="py-5" style="background: linear-gradient(135deg, #f5faff, #f5e6e6);">
+    <section class="py-5" style="background: linear-gradient(135deg, #f5faff, #f99f9f);">
         <div class="container">
             <div class="row align-items-center g-5">
 
@@ -130,11 +137,13 @@
 
                 <!-- Info Section -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">Our Purpose</p>
+                    <h2 class="fw-medium text-uppercase text-primary mb-2">Our Purpose</h2>
                     <h1 class="display-5 mb-4">Mission, Vision & Core Values</h1>
 
                     <div class="mb-4">
-                        <h4 class="text-primary">Mission</h4>
+                        <h4 class="text-primary">
+                            <i class="fa fa-bullseye me-2"></i> Mission
+                        </h4>
                         <p>
                             To protect and serve the communities of Batangas with discipline, vigilance, and integrity,
                             through well-trained officers and effective policing strategies.
@@ -142,7 +151,9 @@
                     </div>
 
                     <div class="mb-4">
-                        <h4 class="text-primary">Vision</h4>
+                        <h4 class="text-primary">
+                            <i class="fa fa-eye me-2"></i> Vision
+                        </h4>
                         <p>
                             To be the leading model of excellence in community policing, recognized for professionalism,
                             readiness, and strong partnerships with the public.
@@ -150,7 +161,9 @@
                     </div>
 
                     <div>
-                        <h4 class="text-primary">Core Values</h4>
+                        <h4 class="text-primary">
+                            <i class="fa fa-heart me-2"></i> Core Values
+                        </h4>
                         <p>
                             Discipline, Integrity, Service, Commitment, Teamwork, and Respect for the community we
                             protect.
@@ -162,6 +175,7 @@
     </div>
     <!-- Features End -->
 
+
     <!-- Facts Start -->
     <div class="container-fluid facts my-5 p-5">
         <div class="row g-4 justify-content-center">
@@ -169,7 +183,7 @@
             <!-- Years of Service -->
             <div class="col-6 col-md-4 col-lg-2 wow fadeIn" data-wow-delay="0.1s">
                 <div class="text-center border p-4 h-100 d-flex flex-column justify-content-center align-items-center">
-                    <i class="fa fa-shield-alt fa-3x text-white mb-3"></i>
+                    <i class="fa fa-shield-alt fa-3x text-success mb-3"></i>
                     <h1 class="display-5 text-primary mb-0" data-toggle="counter-up">25</h1>
                     <span class="fs-6 fw-semi-bold text-white text-center">Years of Service</span>
                 </div>
@@ -179,7 +193,7 @@
             <div class="col-6 col-md-4 col-lg-2 wow fadeIn" data-wow-delay="0.2s">
                 <div class="text-center border p-4 h-100 d-flex flex-column justify-content-center align-items-center"
                     data-bs-toggle="modal" data-bs-target="#officersModal" style="cursor:pointer;">
-                    <i class="fa fa-users fa-3x text-white mb-3"></i>
+                    <i class="fa fa-users fa-3x text-success mb-3"></i>
                     <h1 class="display-5 text-primary mb-0" data-toggle="counter-up">142</h1>
                     <span class="fs-6 fw-semi-bold text-white text-center">Dedicated Officers</span>
                 </div>
@@ -189,7 +203,7 @@
             <div class="col-6 col-md-4 col-lg-2 wow fadeIn" data-wow-delay="0.3s">
                 <div class="text-center border p-4 h-100 d-flex flex-column justify-content-center align-items-center"
                     data-bs-toggle="modal" data-bs-target="#councilModal" style="cursor:pointer;">
-                    <i class="fa fa-user-tie fa-3x text-white mb-3"></i>
+                    <i class="fa fa-user-tie fa-3x text-success mb-3"></i>
                     <h1 class="display-5 text-primary mb-0" data-toggle="counter-up">142</h1>
                     <span class="fs-6 fw-semi-bold text-white text-center">Advisory Council</span>
                 </div>
@@ -199,7 +213,7 @@
             <div class="col-6 col-md-4 col-lg-2 wow fadeIn" data-wow-delay="0.4s">
                 <div class="text-center border p-4 h-100 d-flex flex-column justify-content-center align-items-center"
                     data-bs-toggle="modal" data-bs-target="#partnersModal" style="cursor:pointer;">
-                    <i class="fa fa-handshake fa-3x text-white mb-3"></i>
+                    <i class="fa fa-handshake fa-3x text-success mb-3"></i>
                     <h1 class="display-5 text-primary mb-0" data-toggle="counter-up">957</h1>
                     <span class="fs-6 fw-semi-bold text-white text-center">Community Partnerships</span>
                 </div>
@@ -209,11 +223,12 @@
             <div class="col-6 col-md-4 col-lg-2 wow fadeIn" data-wow-delay="0.5s">
                 <div class="text-center border p-4 h-100 d-flex flex-column justify-content-center align-items-center"
                     data-bs-toggle="modal" data-bs-target="#missionsModal" style="cursor:pointer;">
-                    <i class="fa fa-star fa-3x text-white mb-3"></i>
+                    <i class="fa fa-star fa-3x text-success mb-3"></i>
                     <h1 class="display-5 text-primary mb-0" data-toggle="counter-up">1839</h1>
                     <span class="fs-6 fw-semi-bold text-white text-center">Successful Missions</span>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- Facts End -->
@@ -245,7 +260,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="img/oc.png" alt="Advisory Council Chart" class="img-fluid rounded shadow">
+                    <img src="img/ag.png" alt="Advisory Council Chart" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
