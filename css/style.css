@@ -801,3 +801,37 @@ html {
     transform: translateY(0);
   }
 }
+
+/* Custom CSS for a uniform card appearance */
+.pcr-item .card {
+    /* Set a fixed height for the card to ensure consistency */
+    min-height: 250px; /* Keep this for overall card alignment */
+    
+    /* Display as flex column to align content vertically */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Alternative if you want variable image heights but full image visible */
+.pcr-item .card-img-top {
+    /* Remove fixed height to let the image determine its own height based on aspect ratio */
+    /* height: auto;  <-- This is the default if not set, so you can just remove the height property */
+    width: 100%; /* Ensure it takes full width */
+    object-fit: contain; /* Scale to fit without cropping */
+    background-color: #f8f9fa; /* Optional: A light background color for empty space */
+}
+
+/* Style for the custom download button to match the image */
+.btn-download {
+    background-color: #7b241c; /* A deep reddish-brown color */
+    border-color: #7b241c;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-download:hover {
+    background-color: #651e18; /* A slightly darker shade for hover effect */
+    border-color: #651e18;
+    color: #fff;
+}
