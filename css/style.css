@@ -675,6 +675,7 @@ html {
 .training-img-wrapper {
   height: 220px;
   overflow: hidden;
+  position: relative; /* This is crucial for the overlay positioning */
 }
 
 .training-img {
@@ -684,8 +685,26 @@ html {
   transition: transform 0.4s ease;
 }
 
-.training-img:hover {
-  transform: scale(1.1);
+/* Styles for the new overlay div */
+.training-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(153, 143, 143, 0.6); /* Semi-transparent black overlay */
+  opacity: 0; /* Starts hidden */
+  transition: opacity 0.4s ease; /* Smooth fade-in transition */
+  padding: 1.5rem;
+}
+
+/* This is the key part: when the parent is hovered, show the overlay */
+.training-img-wrapper:hover .training-img {
+  transform: scale(1.1); /* Your existing image hover effect */
+}
+
+.training-img-wrapper:hover .training-overlay {
+  opacity: 1; /* Fade the overlay in on hover */
 }
 
 /* Badge and Button Styling */
@@ -835,3 +854,4 @@ html {
     border-color: #651e18;
     color: #fff;
 }
+ 
