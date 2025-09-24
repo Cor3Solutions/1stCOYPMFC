@@ -66,373 +66,401 @@
             </div>
 
             <div class="row mb-4">
-                <div class="col-md-6 mb-2">
-                    <input type="text" id="searchPCR" class="form-control" placeholder="Search activities...">
-                </div>
-                <div class="col-md-3 mb-2">
-                    <input type="date" id="startDate" class="form-control">
-                </div>
-                <div class="col-md-3 mb-2">
-                    <input type="date" id="endDate" class="form-control">
-                </div>
-            </div>
+                <div class="row g-2 align-items-center">
+                    <!-- Search -->
+                    <div class="col-md-6">
+                        <input type="text" id="searchPCR" class="form-control" placeholder="Search activities...">
+                    </div>
 
-            <div class="row g-4" id="pcrActivities">
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-09-05"
-                    data-title="Program at Barangay Antipolo Rosario Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/1.png" class="card-img-top" alt="Barangay Antipolo">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Antipolo</h5>
-                            <p class="card-text text-muted">Rosario, Batangas — September 5, 2025</p>
-                            <p class="card-text text-muted">Personnel of 1st Batangas PMFC and 59th Infantry (Protector)
-                                Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+                    <!-- Start Date -->
+                    <div class="col-md-2">
+                        <input type="date" id="startDate" class="form-control">
+                    </div>
 
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="1.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
-                            </div>
-                        </div>
+                    <!-- End Date -->
+                    <div class="col-md-2">
+                        <input type="date" id="endDate" class="form-control">
+                    </div>
+
+                    <!-- Sort Button -->
+                    <div class="col-md-2">
+                        <button id="sortBtn" class="btn btn-outline-primary w-100" data-sort="latest">
+                            <i class="fas fa-sort-amount-down me-2"></i>Sort by Latest
+                        </button>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-05"
-                    data-title="Program at Barangay Apar Lobo Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/2.png" class="card-img-top" alt="Barangay Apar">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Apar</h5>
-                            <p class="card-text text-muted">Lobo, Batangas — August 5, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office and other NGAs provided medical
-                                and dental services during the RCSP activity.</p>
 
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/2.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                <div class="row g-4" id="pcrActivities">
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-09-05"
+                        data-title="Program at Barangay Antipolo Rosario Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/1.png" class="card-img-top" alt="Barangay Antipolo">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Antipolo</h5>
+                                <p class="card-text text-muted">Rosario, Batangas — September 5, 2025</p>
+                                <p class="card-text text-muted">Personnel of 1st Batangas PMFC and 59th Infantry
+                                    (Protector)
+                                    Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="1.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-16"
-                    data-title="Program at Barangay Bacao Taysan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/3.png" class="card-img-top" alt="Barangay Bacao">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Bacao</h5>
-                            <p class="card-text text-muted">Taysan, Batangas — July 16, 2025</p>
-                            <p class="card-text text-muted">The Provincial Agriculture Office distributed food-bearing
-                                seedlings and fertilizers to residents during the RCSP activity.</p>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-05"
+                        data-title="Program at Barangay Apar Lobo Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/2.png" class="card-img-top" alt="Barangay Apar">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Apar</h5>
+                                <p class="card-text text-muted">Lobo, Batangas — August 5, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office and other NGAs provided
+                                    medical
+                                    and dental services during the RCSP activity.</p>
 
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/3.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="2.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-09-11"
-                    data-title="Program at Barangay Banalo Rosario Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/4.png" class="card-img-top" alt="Barangay Banalo">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Banalo</h5>
-                            <p class="card-text text-muted">Rosario, Batangas — September 11, 2025</p>
-                            <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
-                                Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/4.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-16"
+                        data-title="Program at Barangay Bacao Taysan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/3.png" class="card-img-top" alt="Barangay Bacao">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Bacao</h5>
+                                <p class="card-text text-muted">Taysan, Batangas — July 16, 2025</p>
+                                <p class="card-text text-muted">The Provincial Agriculture Office distributed
+                                    food-bearing
+                                    seedlings and fertilizers to residents during the RCSP activity.</p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="3.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-05"
-                    data-title="Program at Barangay Buhay na Sapa San Juan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/5.png" class="card-img-top" alt="Barangay Buhay na Sapa">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Buhay na Sapa</h5>
-                            <p class="card-text text-muted">San Juan, Batangas — July 5, 2025</p>
-                            <p class="card-text text-muted">Representatives from each NGA delivered messages of support
-                                during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/5.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-09-11"
+                        data-title="Program at Barangay Banalo Rosario Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/4.png" class="card-img-top" alt="Barangay Banalo">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Banalo</h5>
+                                <p class="card-text text-muted">Rosario, Batangas — September 11, 2025</p>
+                                <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
+                                    Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="4.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-12"
-                    data-title="Program at Barangay Bulsa San Juan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/6.png" class="card-img-top" alt="Barangay Bulsa">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Bulsa</h5>
-                            <p class="card-text text-muted">San Juan, Batangas — July 12, 2025</p>
-                            <p class="card-text text-muted">The Provincial Agriculture Office distributed food-bearing
-                                seedlings and fertilizers during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/6.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-05"
+                        data-title="Program at Barangay Buhay na Sapa San Juan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/5.png" class="card-img-top" alt="Barangay Buhay na Sapa">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Buhay na Sapa</h5>
+                                <p class="card-text text-muted">San Juan, Batangas — July 5, 2025</p>
+                                <p class="card-text text-muted">Representatives from each NGA delivered messages of
+                                    support
+                                    during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="5.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-19"
-                    data-title="Program at Barangay Escribano San Juan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/7.png" class="card-img-top" alt="Barangay Escribano">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Escribano</h5>
-                            <p class="card-text text-muted">San Juan, Batangas — July 19, 2025</p>
-                            <p class="card-text text-muted">The Provincial Agriculture Office and Provincial Veterinary
-                                Office distributed food-bearing seedlings, fertilizers, poultry and hog vitamins, and
-                                disinfectants during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/7.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-12"
+                        data-title="Program at Barangay Bulsa San Juan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/6.png" class="card-img-top" alt="Barangay Bulsa">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Bulsa</h5>
+                                <p class="card-text text-muted">San Juan, Batangas — July 12, 2025</p>
+                                <p class="card-text text-muted">The Provincial Agriculture Office distributed
+                                    food-bearing
+                                    seedlings and fertilizers during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="6.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-13"
-                    data-title="Program at Barangay Jaybanga Lobo Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/8.png" class="card-img-top" alt="Barangay Jaybanga">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Jaybanga</h5>
-                            <p class="card-text text-muted">Lobo, Batangas — August 13, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office provided medical and dental
-                                services during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/8.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-19"
+                        data-title="Program at Barangay Escribano San Juan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/7.png" class="card-img-top" alt="Barangay Escribano">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Escribano</h5>
+                                <p class="card-text text-muted">San Juan, Batangas — July 19, 2025</p>
+                                <p class="card-text text-muted">The Provincial Agriculture Office and Provincial
+                                    Veterinary
+                                    Office distributed food-bearing seedlings, fertilizers, poultry and hog vitamins,
+                                    and
+                                    disinfectants during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="7.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-04"
-                    data-title="Program at Barangay Laiya Ibabao San Juan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/9.png" class="card-img-top" alt="Barangay Laiya Ibabao">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Laiya Ibabao</h5>
-                            <p class="card-text text-muted">San Juan, Batangas — August 4, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office and other NGAs provided medical
-                                and dental services during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/9.pdf">
-                                    <i class="fa fa-download me-2"></i></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-13"
+                        data-title="Program at Barangay Jaybanga Lobo Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/8.png" class="card-img-top" alt="Barangay Jaybanga">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Jaybanga</h5>
+                                <p class="card-text text-muted">Lobo, Batangas — August 13, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office provided medical and dental
+                                    services during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="8.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-04"
-                    data-title="Program at Barangay Libato San Juan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/10.png" class="card-img-top" alt="Barangay Libato">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Libato</h5>
-                            <p class="card-text text-muted">San Juan, Batangas — August 4, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office and other NGAs provided medical
-                                and dental services during the RCSP activity.</p>
-
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/10.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-04"
+                        data-title="Program at Barangay Laiya Ibabao San Juan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/9.png" class="card-img-top" alt="Barangay Laiya Ibabao">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Laiya Ibabao</h5>
+                                <p class="card-text text-muted">San Juan, Batangas — August 4, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office and other NGAs provided
+                                    medical
+                                    and dental services during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="9.pdf">
+                                        <i class="fa fa-download me-2"></i></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-13"
-                    data-title="Program at Barangay Macalamcam A Lobo Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/11.png" class="card-img-top" alt="Barangay Macalamcam A">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Macalamcam A</h5>
-                            <p class="card-text text-muted">Lobo, Batangas — August 13, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office and other NGAs provided medical
-                                and dental services during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/11.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-04"
+                        data-title="Program at Barangay Libato San Juan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/10.png" class="card-img-top" alt="Barangay Libato">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Libato</h5>
+                                <p class="card-text text-muted">San Juan, Batangas — August 4, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office and other NGAs provided
+                                    medical
+                                    and dental services during the RCSP activity.</p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="10.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-15"
-                    data-title="Program at Barangay Malalim na Sanog Lobo Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/12.png" class="card-img-top" alt="Barangay Malalim na Sanog">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Malalim na Sanog</h5>
-                            <p class="card-text text-muted">Lobo, Batangas — August 15, 2025</p>
-                            <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
-                                Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/12.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-13"
+                        data-title="Program at Barangay Macalamcam A Lobo Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/11.png" class="card-img-top" alt="Barangay Macalamcam A">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Macalamcam A</h5>
+                                <p class="card-text text-muted">Lobo, Batangas — August 13, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office and other NGAs provided
+                                    medical
+                                    and dental services during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="11.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-03"
-                    data-title="Program at Barangay Matamis Rosario Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/13.png" class="card-img-top" alt="Barangay Matamis">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Matamis</h5>
-                            <p class="card-text text-muted">Rosario, Batangas — August 3, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office provided medical and dental
-                                services during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/13.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-15"
+                        data-title="Program at Barangay Malalim na Sanog Lobo Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/12.png" class="card-img-top" alt="Barangay Malalim na Sanog">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Malalim na Sanog</h5>
+                                <p class="card-text text-muted">Lobo, Batangas — August 15, 2025</p>
+                                <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
+                                    Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="12.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-08"
-                    data-title="Program at Barangay Nasi Rosario Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/14.png" class="card-img-top" alt="Barangay Nasi">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Nasi</h5>
-                            <p class="card-text text-muted">Rosario, Batangas — August 8, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office and other NGAs provided medical
-                                and dental services during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/14.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-03"
+                        data-title="Program at Barangay Matamis Rosario Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/13.png" class="card-img-top" alt="Barangay Matamis">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Matamis</h5>
+                                <p class="card-text text-muted">Rosario, Batangas — August 3, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office provided medical and dental
+                                    services during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="13.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-22"
-                    data-title="Program at Barangay Palakpak Rosario Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/15.png" class="card-img-top" alt="Barangay Palakpak">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Palakpak</h5>
-                            <p class="card-text text-muted">Rosario, Batangas — August 22, 2025</p>
-                            <p class="card-text text-muted">The Provincial Health Office and other NGAs provided medical
-                                and dental services during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/15.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-08"
+                        data-title="Program at Barangay Nasi Rosario Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/14.png" class="card-img-top" alt="Barangay Nasi">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Nasi</h5>
+                                <p class="card-text text-muted">Rosario, Batangas — August 8, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office and other NGAs provided
+                                    medical
+                                    and dental services during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="14.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-25"
-                    data-title="Program at Barangay Piña Taysan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/16.png" class="card-img-top" alt="Barangay Piña">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Piña</h5>
-                            <p class="card-text text-muted">Taysan, Batangas — July 25, 2025</p>
-                            <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
-                                Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/16.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-22"
+                        data-title="Program at Barangay Palakpak Rosario Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/15.png" class="card-img-top" alt="Barangay Palakpak">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Palakpak</h5>
+                                <p class="card-text text-muted">Rosario, Batangas — August 22, 2025</p>
+                                <p class="card-text text-muted">The Provincial Health Office and other NGAs provided
+                                    medical
+                                    and dental services during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="15.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-31"
-                    data-title="Program at Barangay Pinagbayanan Taysan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/17.png" class="card-img-top" alt="Barangay Pinagbayanan">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Pinagbayanan</h5>
-                            <p class="card-text text-muted">Taysan, Batangas — July 31, 2025</p>
-                            <p class="card-text text-muted">The 1st Batangas PMFC, 59th Infantry (Protector) Battalion,
-                                Philippine Army, together with members of the Women’s Sector and LGBTQ, offered free
-                                haircuts, manicures, pedicures, and massages during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/17.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-25"
+                        data-title="Program at Barangay Piña Taysan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/16.png" class="card-img-top" alt="Barangay Piña">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Piña</h5>
+                                <p class="card-text text-muted">Taysan, Batangas — July 25, 2025</p>
+                                <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
+                                    Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="16.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-09-12"
-                    data-title="Program at Barangay Pinaghawanan Rosario Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/18.png" class="card-img-top" alt="Barangay Pinaghawanan">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Pinaghawanan</h5>
-                            <p class="card-text text-muted">Rosario, Batangas — September 12, 2025</p>
-                            <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
-                                Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/18.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-07-31"
+                        data-title="Program at Barangay Pinagbayanan Taysan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/17.png" class="card-img-top" alt="Barangay Pinagbayanan">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Pinagbayanan</h5>
+                                <p class="card-text text-muted">Taysan, Batangas — July 31, 2025</p>
+                                <p class="card-text text-muted">The 1st Batangas PMFC, 59th Infantry (Protector)
+                                    Battalion,
+                                    Philippine Army, together with members of the Women’s Sector and LGBTQ, offered free
+                                    haircuts, manicures, pedicures, and massages during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="17.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-09"
-                    data-title="Program at Barangay Sampiro San Juan Batangas">
-                    <div class="card shadow h-100 border-0">
-                        <img src="img/activities/19.png" class="card-img-top" alt="Barangay Sampiro">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Program at Barangay Sampiro</h5>
-                            <p class="card-text text-muted">San Juan, Batangas — August 9, 2025</p>
-                            <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
-                                Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
-                            <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/19.pdf">
-                                    <i class="fa fa-download me-2"></i>Download
-                                </button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-09-12"
+                        data-title="Program at Barangay Pinaghawanan Rosario Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/18.png" class="card-img-top" alt="Barangay Pinaghawanan">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Pinaghawanan</h5>
+                                <p class="card-text text-muted">Rosario, Batangas — September 12, 2025</p>
+                                <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
+                                    Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="18.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-            <div class="text-center mt-4">
-                <button id="showMoreBtn" class="btn btn-outline-primary px-4">Show More Activities</button>
+                    <div class="col-md-6 col-lg-4 pcr-item" data-date="2025-08-09"
+                        data-title="Program at Barangay Sampiro San Juan Batangas">
+                        <div class="card shadow h-100 border-0">
+                            <img src="img/activities/19.png" class="card-img-top" alt="Barangay Sampiro">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Program at Barangay Sampiro</h5>
+                                <p class="card-text text-muted">San Juan, Batangas — August 9, 2025</p>
+                                <p class="card-text text-muted">The 1st Batangas PMFC and 59th Infantry (Protector)
+                                    Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-download w-100 download-btn" data-file="19.pdf">
+                                        <i class="fa fa-download me-2"></i>Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-4">
+                    <button id="showMoreBtn" class="btn btn-outline-primary px-4">Show More Activities</button>
+                </div>
             </div>
         </div>
-    </div>
 
+    </div>
     <div id="footer"></div>
 
     <!-- JavaScript Libraries -->
@@ -452,51 +480,75 @@
             const searchInput = document.getElementById("searchPCR");
             const startDate = document.getElementById("startDate");
             const endDate = document.getElementById("endDate");
+            const sortBtn = document.getElementById("sortBtn");
+            const activitiesContainer = document.getElementById("pcrActivities");
             const items = document.querySelectorAll(".pcr-item");
+            const showMoreBtn = document.getElementById("showMoreBtn");
 
-            function filterActivities() {
+            function filterAndSortActivities() {
                 const searchText = searchInput.value.toLowerCase();
                 const start = startDate.value ? new Date(startDate.value) : null;
                 const end = endDate.value ? new Date(endDate.value) : null;
+                const sortOrder = sortBtn.getAttribute("data-sort");
 
-                items.forEach(item => {
-                    const textContent = item.innerText.toLowerCase(); // ✅ search everything inside card
+                const filteredItems = Array.from(items).filter(item => {
+                    const textContent = item.innerText.toLowerCase();
                     const itemDate = new Date(item.getAttribute("data-date"));
 
                     const matchesSearch = textContent.includes(searchText);
-                    const matchesDate =
-                        (!start || itemDate >= start) &&
-                        (!end || itemDate <= end);
+                    const matchesDate = (!start || itemDate >= start) && (!end || itemDate <= end);
 
-                    if (matchesSearch && matchesDate) {
-                        item.style.display = "block";
+                    return matchesSearch && matchesDate;
+                });
+
+                filteredItems.sort((a, b) => {
+                    const dateA = new Date(a.getAttribute("data-date"));
+                    const dateB = new Date(b.getAttribute("data-date"));
+
+                    if (sortOrder === "latest") {
+                        return dateB - dateA;
                     } else {
-                        item.style.display = "none";
+                        return dateA - dateB;
                     }
+                });
+
+                activitiesContainer.innerHTML = '';
+                filteredItems.forEach(item => {
+                    item.style.display = "block";
+                    activitiesContainer.appendChild(item);
                 });
             }
 
-            searchInput.addEventListener("input", filterActivities);
-            startDate.addEventListener("change", filterActivities);
-            endDate.addEventListener("change", filterActivities);
-        })
+            // Event Listeners
+            searchInput.addEventListener("input", filterAndSortActivities);
+            startDate.addEventListener("change", filterAndSortActivities);
+            endDate.addEventListener("change", filterAndSortActivities);
 
+            sortBtn.addEventListener("click", function () {
+                const currentSort = this.getAttribute("data-sort");
+                if (currentSort === "latest") {
+                    this.setAttribute("data-sort", "oldest");
+                    this.innerHTML = '<i class="fas fa-sort-amount-up me-2"></i>Sort by Oldest';
+                } else {
+                    this.setAttribute("data-sort", "latest");
+                    this.innerHTML = '<i class="fas fa-sort-amount-down me-2"></i>Sort by Latest';
+                }
+                filterAndSortActivities();
+            });
 
-        // Load Header
-        fetch("header.html")
-            .then(res => res.text())
-            .then(data => document.getElementById("header").innerHTML = data);
+            // Initial page load and setup
+            filterAndSortActivities(); // Call the function here to sort initially
 
-        // Load Footer
-        fetch("footer.html")
-            .then(res => res.text())
-            .then(data => document.getElementById("footer").innerHTML = data);
+            // Load Header and Footer
+            fetch("header.html")
+                .then(res => res.text())
+                .then(data => document.getElementById("header").innerHTML = data);
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const items = document.querySelectorAll("#pcrActivities .pcr-item");
-            const showMoreBtn = document.getElementById("showMoreBtn");
+            fetch("footer.html")
+                .then(res => res.text())
+                .then(data => document.getElementById("footer").innerHTML = data);
 
-            // Show only first 6
+            // Show More Activities logic
             items.forEach((item, index) => {
                 if (index >= 6) {
                     item.classList.add("d-none");
@@ -505,11 +557,10 @@
 
             showMoreBtn.addEventListener("click", function () {
                 items.forEach(item => item.classList.remove("d-none"));
-                showMoreBtn.style.display = "none"; // hide button after showing all
+                showMoreBtn.style.display = "none";
             });
-        });
 
-        document.addEventListener("DOMContentLoaded", function () {
+            // Download button script
             document.querySelectorAll(".download-btn").forEach(btn => {
                 btn.addEventListener("click", async function () {
                     const userInput = prompt("Enter passcode to download:");
