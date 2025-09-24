@@ -33,7 +33,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body> 
+<body>
     <div id="header"></div>
 
     <!-- Page Header Start -->
@@ -89,7 +89,7 @@
                                 Battalion, Philippine Army, offered free haircuts during the RCSP activity.</p>
 
                             <div class="mt-auto">
-                                <button class="btn btn-download w-100 download-btn" data-file="reports/1.pdf">
+                                <button class="btn btn-download w-100 download-btn" data-file="1.pdf">
                                     <i class="fa fa-download me-2"></i>Download
                                 </button>
                             </div>
@@ -510,39 +510,44 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            const passcode = "PMFC2025"; // <-- change this to your preferred code
             document.querySelectorAll(".download-btn").forEach(btn => {
-                btn.addEventListener("click", function () {
+                btn.addEventListener("click", async function () {
                     const userInput = prompt("Enter passcode to download:");
-                    if (userInput === passcode) {
-                        // Find the parent card element to get the title
-                        const card = this.closest('.card');
-                        const cardTitle = card.querySelector('.card-title').textContent.trim();
+                    if (userInput !== null) {
+                        const filename = this.getAttribute("data-file");
 
-                        // Get the file URL from the data-file attribute
-                        const fileURL = this.getAttribute("data-file");
+                        try {
+                            const response = await fetch('/api/download', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ passcode: userInput, filename: filename })
+                            });
 
-                        // Extract the file extension (e.g., .pdf)
-                        const fileExtension = fileURL.split('.').pop();
+                            if (response.ok) {
+                                const blob = await response.blob();
+                                const fileExtension = filename.split('.').pop();
+                                const card = this.closest('.card');
+                                const cardTitle = card.querySelector('.card-title').textContent.trim();
+                                const newFilename = cardTitle.replace(/[^\w\s]/gi, '').replace(/\s+/g, '_') + '.' + fileExtension;
 
-                        // Construct the new filename from the title and extension
-                        // Replace spaces and special characters with underscores for a clean filename
-                        const newFilename = cardTitle.replace(/[^\w\s]/gi, '').replace(/\s+/g, '_') + '.' + fileExtension;
+                                const a = document.createElement('a');
+                                a.href = window.URL.createObjectURL(blob);
+                                a.download = newFilename;
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                                window.URL.revokeObjectURL(a.href);
 
-                        // Create a temporary link element
-                        const a = document.createElement('a');
-                        a.href = fileURL;
-
-                        // Set the download attribute to the new filename
-                        a.download = newFilename;
-
-                        // Append the link to the document, click it, and then remove it
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-
-                    } else if (userInput !== null) {
-                        alert("Incorrect passcode!");
+                            } else {
+                                const errorData = await response.json();
+                                alert(errorData.error);
+                            }
+                        } catch (error) {
+                            alert('An error occurred. Please try again.');
+                            console.error('Fetch error:', error);
+                        }
                     }
                 });
             });
