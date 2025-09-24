@@ -72,14 +72,28 @@
                         <input type="text" id="searchPCR" class="form-control" placeholder="Search activities...">
                     </div>
 
-                    <div class="col-6 col-sm-6 col-md-2 mb-2">
+                    <div class="col-6 col-sm-4 col-md-3 mb-2">
                         <input type="date" id="startDate" class="form-control" placeholder="Start Date">
                     </div>
 
-                    <div class="col-6 col-sm-6 col-md-2 mb-2">
+                    <div class="col-6 col-sm-4 col-md-3 mb-2">
                         <input type="date" id="endDate" class="form-control" placeholder="End Date">
                     </div>
+                    <style>
+                        /* CSS to make placeholder text visible in date inputs */
+                        input[type="date"]:before {
+                            content: attr(placeholder) !important;
+                            color: #999;
+                            /* Adjust color for visibility */
+                            width: 100%;
+                        }
 
+                        /* This resets the default content once a date is selected/set */
+                        input[type="date"]:valid:before,
+                        input[type="date"]:focus:before {
+                            content: "";
+                        }
+                    </style>
                     <!-- Sort Button -->
                     <div class="col-md-2">
                         <button id="sortBtn" class="btn btn-outline-primary w-100" data-sort="latest">
