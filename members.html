@@ -3,124 +3,474 @@
 
 <head>
     <meta charset="utf-8">
-    <title>1st COY - PMFC Batangas</title>
+    <title>1st COY - PMFC Batangas - Org Chart</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Favicon -->
     <link href="logo.jpg" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS for the Organizational Chart */
+
+        /* General container for the chart */
+        .org-chart {
+            position: relative;
+            padding-bottom: 50px;
+            /* Space for lines at the bottom */
+        }
+
+        /* Card styling */
+        .org-chart .card {
+            border: 1px solid var(--bs-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            /* Ensure cards fill their column height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Push content to top/bottom */
+        }
+
+        .org-chart .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .org-chart .card-body {
+            flex-grow: 1;
+            /* Allow body to grow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            /* Adjust padding as needed */
+        }
+
+        /* Image styling */
+        .org-chart .card img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--bs-light);
+            margin-bottom: 0.75rem;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        /* Text styling within cards */
+        .org-chart .card-title {
+            font-size: 1rem;
+            /* Base font size */
+            font-weight: 700;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .org-chart .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--bs-secondary);
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .org-chart .card-text-description {
+            /* For custom descriptions if needed */
+            font-size: 0.8rem;
+            color: var(--bs-dark);
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+
+        /* Line styles */
+        .chart-line {
+            position: absolute;
+            background-color: var(--bs-secondary);
+            opacity: 0.6;
+            z-index: 0;
+            /* Ensure lines are behind cards */
+        }
+
+        /* Commander to Executive line */
+        .line-commander-v {
+            width: 2px;
+            height: 40px;
+            /* Space between commander and next tier */
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -40px;
+        }
+
+        /* Executive to Platoon Leaders horizontal line */
+        .line-executive-h {
+            width: calc(100% - 20px);
+            /* Adjust width as needed */
+            height: 2px;
+            left: 10px;
+            top: 20px;
+            /* Position relative to the parent row */
+        }
+
+        /* Executive to Platoon Leaders vertical drops */
+        .line-executive-v-drop {
+            width: 2px;
+            height: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -20px;
+        }
+
+        /* Platoon Leader to PNCOs horizontal line */
+        .line-platoon-h {
+            width: calc(100% - 20px);
+            height: 2px;
+            left: 10px;
+            top: 20px;
+            /* Position relative to parent row */
+        }
+
+        /* Platoon Leader to PNCOs vertical drops */
+        .line-platoon-v-drop {
+            width: 2px;
+            height: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -20px;
+        }
+
+        /* Connector from horizontal line to individual cards */
+        .card-connector-v {
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            /* Height from line to card */
+            left: 50%;
+            transform: translateX(-50%);
+            top: -30px;
+            background-color: var(--bs-secondary);
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        /* Responsive adjustments for lines */
+        @media (max-width: 991.98px) {
+
+            /* Adjust for smaller screens (e.g., tablet landscape and below) */
+            .line-executive-h {
+                width: calc(100% - 40px);
+                /* Less width for smaller screens */
+                left: 20px;
+            }
+
+            .line-platoon-h {
+                width: calc(100% - 40px);
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+
+            /* Adjust for mobile/tablet portrait */
+            .org-chart .card img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .org-chart .card-title {
+                font-size: 0.9rem;
+            }
+
+            .org-chart .card-subtitle {
+                font-size: 0.75rem;
+            }
+
+            /* On very small screens, horizontal lines might need to be less prominent or vertical.
+               For this design, we'll keep them, but they might span fewer cards visually. */
+            .line-executive-h,
+            .line-platoon-h {
+                width: calc(100% - 20px);
+                /* Back to full width minus padding */
+                left: 10px;
+            }
+        }
+
+        /* Specific adjustments for PNCO row to better handle many items */
+        .pnco-row .col-6,
+        .pnco-row .col-md-4,
+        .pnco-row .col-lg-3,
+        .pnco-row .col-xl-2 {
+            display: flex;
+            /* Ensure columns behave as flex containers */
+            justify-content: center;
+        }
+
+        .pnco-row .card {
+            max-width: 250px;
+            /* Constrain card width on larger screens for better spacing */
+        }
+    </style>
 </head>
 
 <body>
     <div id="header"></div>
 
-    <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s"
         style="position: relative; background: url('img/try.png') center center/cover no-repeat;">
-
-        <!-- Gradient Overlay -->
         <div style="position: absolute; inset: 0; 
-        background: linear-gradient(to right, rgba(117, 53, 53, 0.85), rgba(93, 92, 92, 0.6)); 
-        z-index: 1;">
+            background: linear-gradient(to right, rgba(117, 53, 53, 0.85), rgba(93, 92, 92, 0.6)); 
+            z-index: 1;">
         </div>
-
         <div class="container py-5 position-relative" style="z-index: 2;">
-            <h1 class="display-3 text-white animated slideInRight">Members</h1>
+            <h1 class="display-3 text-white animated slideInRight">Organizational Chart</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb animated slideInRight mb-0">
                     <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">Members</li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Organizational Chart</li>
                 </ol>
             </nav>
         </div>
     </div>
-    <!-- Page Header End -->
-
-    <!-- Members Section Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <p class="fw-medium text-uppercase text-primary mb-2">Our Team</p>
-            <h1 class="display-5 mb-5">Meet the 1st Coy PMFC Batangas</h1>
+        <div class="container org-chart">
+            <p class="fw-medium text-uppercase text-primary mb-2 text-center">Our Structure</p>
+            <h1 class="display-5 mb-5 text-center">1st Batangas PMFC Organizational Chart</h1>
 
-            <div class="row g-4">
-
-                <!-- Force Commander -->
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item text-center rounded shadow overflow-hidden">
-                        <img class="img-fluid team-img" src="img/team/sc.jpg" alt="Force Commander">
-                        <div class="p-4">
-                            <h5 class="mb-1">PMAJ. Karl Axcel Sta Clara</h5>
-                            <span class="text-primary">Force Commander</span>
-                            <p class="mt-2">Leads and oversees the entire operations of the 1st PMFC Batangas.</p>
+            <div class="row justify-content-center mb-5 position-relative">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-4 text-center">
+                    <div class="card p-3 shadow-sm mx-auto bg-primary text-white">
+                        <div class="card-body">
+                            <img src="img/team/21.png" alt="PMAJ KARL AXCEL DC STA CLARA">
+                            <span class="badge bg-light text-primary mb-1 fw-bold">COMMAND</span>
+                            <h4 class="card-title text-white fs-5">PMAJ KARL AXCEL DC STA CLARA</h4>
+                            <p class="card-subtitle text-white">FORCE COMMANDER</p>
                         </div>
                     </div>
                 </div>
+                <div class="chart-line line-commander-v position-absolute"></div>
+            </div>
 
-                <!-- Executive Officer -->
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="team-item text-center rounded shadow overflow-hidden">
-                        <img class="img-fluid team-img" src="img/team/laylo.jpg" alt="Executive Officer">
-                        <div class="p-4">
-                            <h5>PCPT. MJ Laylo</h5>
-                            <span class="text-primary">Deputy Officer</span>
-                            <p class="mt-2">Assists the Force Commander in strategic planning and operational
-                                management.</p>
+            <div class="row justify-content-center mb-5 position-relative pt-5">
+                <div class="chart-line line-executive-h position-absolute"></div>
+
+                <div class="col-6 col-md-4 col-lg-3 text-center position-relative">
+                    <div class="card p-2 shadow-sm">
+                        <div class="card-body">
+                            <img src="img/team/22.png" alt="PCPT MARK JOVEN OLIVAR LAYLO">
+                            <h5 class="card-title text-primary">PCPT MARK JOVEN OLIVAR LAYLO</h5>
+                            <p class="card-subtitle">Asst Company Commander</p>
                         </div>
                     </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
                 </div>
+
+                <div class="col-6 col-md-4 col-lg-3 text-center position-relative">
+                    <div class="card p-2 shadow-sm">
+                        <div class="card-body">
+                            <img src="img/team/23.png" alt="PEMS Sardival Delmas Palitogen">
+                            <h5 class="card-title text-primary">PEMS Sardival Delmas Palitogen</h5>
+                            <p class="card-subtitle">CESPO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+                <div class="chart-line line-commander-v position-absolute" style="top: calc(100% - 10px);"></div>
+            </div>
+
+            <div class="row justify-content-center mb-5 position-relative pt-5">
+                <h4 class="text-center text-secondary mb-3 fs-5 fw-bold">PLATOON LEADERS</h4>
+                <div class="chart-line line-platoon-h position-absolute"></div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-info bg-opacity-10">
+                        <div class="card-body">
+                            <img src="img/team/24.png" alt="PCPT JOSELITO BENCITO BILUGAN">
+                            <h6 class="card-title text-primary">PCPT JOSELITO BENCITO BILUGAN</h6>
+                            <p class="card-subtitle small">TSP, Platoon Leader</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-info bg-opacity-10">
+                        <div class="card-body">
+                            <img src="img/team/27.png" alt="PCPT JAYSON MAGSISI PARAS">
+                            <h6 class="card-title text-primary">PCPT JAYSON MAGSISI PARAS</h6>
+                            <p class="card-subtitle small">2nd Manuever, PL</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-info bg-opacity-10">
+                        <div class="card-body">
+                            <img src="img/team/26.png" alt="PCPT JUNE OLAVE GONZALES">
+                            <h6 class="card-title text-primary">PCPT JUNE OLAVE GONZALES</h6>
+                            <p class="card-subtitle small">3rd Manuever, PL</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-info bg-opacity-10">
+                        <div class="card-body">
+                            <img src="img/team/25.png" alt="PEMS Ruel Casas Dimaano">
+                            <h6 class="card-title text-primary">PEMS Ruel Casas Dimaano</h6>
+                            <p class="card-subtitle small">4th Manuever, PL</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+                <div class="chart-line line-commander-v position-absolute" style="top: calc(100% - 10px);"></div>
+            </div>
+
+            <div class="row justify-content-center pnco-row position-relative pt-5">
+                <h4 class="text-center text-secondary mb-3 fs-5 fw-bold">SECTION PNCOs</h4>
+                <div class="chart-line line-platoon-h position-absolute"></div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/36.png" alt="PSSg Claribel Garcia Manalo">
+                            <h6 class="card-title text-primary">PSSg Claribel Garcia Manalo</h6>
+                            <p class="card-subtitle small">ADMIN PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="logo.jpg" alt="PEMS Joeven Juniosa Dacayanan">
+                            <h6 class="card-title text-primary">PEMS Joeven Juniosa Dacayanan</h6>
+                            <p class="card-subtitle small">INTEL PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="logo.jpg" alt="PCPT WARLIE FLOR UNTALAN CONTRERAS">
+                            <h6 class="card-title text-primary">PCPT WARLIE FLOR UNTALAN CONTRERAS</h6>
+                            <p class="card-subtitle small">Chief Operation Section</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/35.png" alt="PSSg Edward Pesigan Mendoza">
+                            <h6 class="card-title text-primary">PSSg Edward Pesigan Mendoza</h6>
+                            <p class="card-subtitle small">SUPPLY PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/30.png" alt="PCpl Rhona Mae Magsino Cometa">
+                            <h6 class="card-title text-primary">PCpl Rhona Mae Magsino Cometa</h6>
+                            <p class="card-subtitle small">PCR PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/32.png" alt="Pat Angelica Balabbo Lasin">
+                            <h6 class="card-title text-primary">Pat Angelica Balabbo Lasin</h6>
+                            <p class="card-subtitle small">FINANCE PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/29.png" alt="PMSg Dennis Molina Besilos">
+                            <h6 class="card-title text-primary">PMSg Dennis Molina Besilos</h6>
+                            <p class="card-subtitle small">INVEST PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/37.png" alt="PSMS Maria Kristal Montales Valencia">
+                            <h6 class="card-title text-primary">PSMS Maria Kristal Montales Valencia</h6>
+                            <p class="card-subtitle small">HRDD PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/33.png" alt="Pat Zeny Flores Llanes">
+                            <h6 class="card-title text-primary">Pat Zeny Flores Llanes</h6>
+                            <p class="card-subtitle small">PPSMU PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center position-relative mb-4">
+                    <div class="card p-2 shadow-sm bg-light">
+                        <div class="card-body">
+                            <img src="img/team/34.png" alt="Pat Edgar Jr Calalo Gelindon">
+                            <h6 class="card-title text-primary">Pat Edgar Jr Calalo Gelindon</h6>
+                            <p class="card-subtitle small">IT PNCO</p>
+                        </div>
+                    </div>
+                    <div class="chart-line card-connector-v position-absolute"></div>
+                </div>
+
+
+
             </div>
         </div>
     </div>
-    <!-- Members Section End -->
-
-    <style>
-        /* Force all team images to be the same size */
-        .team-item .team-img {
-            width: 100%;
-            height: 300px;
-            /* adjust this for taller/shorter images */
-            object-fit: cover;
-        }
-
-        /* Make card heights consistent */
-        .team-item {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .team-item .p-4 {
-            flex-grow: 1;
-        }
-    </style>
-
-
     <div id="footer"></div>
 
-
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -129,7 +479,6 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
